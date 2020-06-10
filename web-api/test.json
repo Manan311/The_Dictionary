@@ -1,0 +1,78 @@
+[
+    {
+    "wordEnglish": "String",
+"wordNonEnglish": "String",
+"wordExpanded": "String",
+"languageCode": "String",
+"image": "String",
+"imageType": "String",
+"audio": "String",
+"audioType": "String",
+"linkAuthoritative": "String",
+"linkWikipedia": "String",
+"linkYouTube": "String",
+"authorName": "String",
+"dateCreated": "Date",
+"dateRevised": "Date",
+"fieldOfStudy": "String",
+"helpYes": 1,
+"helpNo": 2,
+"definitions": [
+    {    "authorName": "String",
+        "dateCreated": "Date",
+        "definition": "String",
+        "quality": 0,
+        "likes": 0
+    },
+    {    "authorName": "String",
+        "dateCreated": "Date",
+        "definition": "String",
+        "quality": 0,
+        "likes": 0
+    }
+]
+},
+
+{
+    "wordEnglish": "ABC",
+    "wordNonEnglish": "String",
+    "wordExpanded": "String",
+    "languageCode": "String",
+    "image": "String",
+    "imageType": "String",
+    "audio": "String",
+    "audioType": "String",
+    "linkAuthoritative": "String",
+    "linkWikipedia": "String",
+    "linkYouTube": "String",
+    "authorName": "String",
+    "dateCreated": "2012-03-19T07:22Z",
+    "dateRevised": "2012-03-19T07:22Z",
+    "fieldOfStudy": "String",
+    "helpYes": 1,
+    "helpNo": 2,
+    "definitions": [
+        {
+            "authorName": "String",
+            "dateCreated": "2012-03-19T07:22Z",
+            "definition": "String",
+            "quality": 0,
+            "likes": 0
+        },
+        {
+            "authorName": "String",
+            "dateCreated": "2012-03-19T07:22Z",
+            "definition": "String",
+            "quality": 0,
+            "likes": 0
+        }
+    ]
+},
+
+{    "authorName": "a",
+    "dateCreated": "2020-02-24T00:00:00.000Z",
+    "definition": "a",
+    "quality": 0,
+    "likes": 0
+}
+]
