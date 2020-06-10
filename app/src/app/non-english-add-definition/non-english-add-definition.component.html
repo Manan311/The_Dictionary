@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Definition</title>
+</head>
+
+<body>
+    <header>
+        <h2>Add another definition to {{termNonEnglish.wordEnglish}}</h2>
+    </header>
+
+    <div class="body">
+        <tr>
+            <td class="category">New definition: </td>
+            <td class="getInfo">
+                <table class="getInfoTable">
+                    <tr class="desc">Enter data, and click/tap the Save button</tr>
+                    <tr class="ttl" name="authorName">Author's Name:</tr>
+                    <tr class="in1"><input type="text"  name="authorName" [(ngModel)]="newDefinition.authorName"  required></tr>
+                    <tr class="ttl" name="definition">Definition:</tr>
+                    <tr class="in2">
+                        <textarea class="tarea2" rows="10" name="definition" #definition="ngModel" minlength="50" maxlength="5000"
+                        [(ngModel)]="newDefinition.definition" required autofocus></textarea>
+                        <div *ngIf='definition.invalid && (definition.dirty || definition.touched)' class='a-d'>
+                            <div *ngIf='definition.errors?.required'>Definition is required, 50 to 5000 characters</div>
+                            <div *ngIf='definition.errors?.minlength'>Definition must be at least 50 characters</div>
+                        </div>
+                    </tr>
+                    <tr class="btn"><button (click)="addDefinition()">Save</button><button
+                            [routerLink]="['/term/nonEnglish/detail', id]">Cancel</button></tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="category">Existing definitions ({{termNonEnglish.definitions.length}}): </td>
+            <td>
+                <table *ngFor="let def of termNonEnglish.definitions">
+                    <tr>
+                        <div class="def">
+                            <div class="hd">
+                                <!-- (click)="incrementLikes(def._id)" -->
+                                <button>Likes({{def.likes}})</button>
+                                <p class="hdp">Author: {{def.authorName}} on {{def.dateCreated}}</p>
+                            </div>
+                            <p class="defdef">{{def.definition}}</p>
+                        </div>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="category">Field of Study: </td>
+            <td class="desc">{{termNonEnglish.fieldOfStudy}}</td>
+        </tr>
+    </div>
+
+    <footer>
+        <button [routerLink]="['/term/nonEnglish']">Back to List</button>
+    </footer>
+
+</body>
+
+</html>

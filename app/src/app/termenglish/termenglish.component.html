@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term English</title>
+</head>
+
+<body>
+    <div class="header">
+        <tr>
+            <td>
+                <h2>List of English Terms - </h2>
+                <label>
+                    <input type="search" placeholder="Search..." [(ngModel)]="searchString"
+                        (ngModelChange)="doSearch()">
+                    <!-- <button class="k">Search</button> -->
+                </label>
+            </td>
+            <td>
+                <button class="addnew" [routerLink]="['/term/english/create']">Add New</button>
+            </td>
+        </tr>
+    </div>
+
+    <div class="tbl">
+        <tbody class="termtable">
+            <tr>
+                <th>Word</th>
+                <th>Author</th>
+                <th>Definition</th>
+                <th>Field Of Study</th>
+                <th></th>
+            </tr>
+            <ng-template *ngIf="searchString.length>2;then search; else all"></ng-template> 
+                <ng-template #all>
+                    <tr class="termstablerow" *ngFor="let e of termEnglish">
+                        <td class="word">{{e.wordEnglish}}</td>
+                        <td class="author">{{e.authorName}}</td>
+                        <td class="def" *ngIf="e.definitions[0]">{{e.definitions[0].definition}}</td>
+                        <td class="field">{{e.fieldOfStudy }}</td>
+                        <td class="detail"><Button class="btn-grad"
+                                [routerLink]="['/term/english/detail', e._id]">Detail</Button></td>
+                        </tr>
+                </ng-template>
+                <ng-template #search>
+                    <tr class="termstablerow" *ngFor="let e of termEnglishSearch">
+                        <td class="word">{{e.wordEnglish}}</td>
+                        <td class="author">{{e.authorName}}</td>
+                        <td class="def">{{e.definitions[0].definition}}</td>
+                        <td class="field">{{e.fieldOfStudy }}</td>
+                        <td class="detail"><Button class="btn-grad"
+                                [routerLink]="['/term/english/detail', e._id]">Detail</Button></td>
+                    </tr>
+                </ng-template>
+        </tbody>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+</head>
+
+<body>
+    <header>
+        <h2>{{termEnglish.wordEnglish}}</h2>
+        <h2 *ngIf="termEnglish.wordExpanded">({{termEnglish.wordExpanded}})</h2>
+        <h2> - Term Detail</h2>
+    </header>
+
+    <div class="body">
+        <tbody>
+            <tr>
+                <td class="category">Definition: </td>
+                <td class="definitionCell">
+                    <table *ngFor="let def of termEnglish.definitions">
+                        <tr>
+                            <div class="def">
+                                <div class="hd">
+                                    <!-- (click)="incrementLikes(def._id)" -->
+                                    <button (click)='incrementLikes(def._id)'>Likes({{def.likes}})</button>
+                                    <p class="hdp">Author: {{def.authorName}} on {{def.dateCreated}}</p>
+                                </div>
+                                <p class="defdef">{{def.definition}}</p>
+                            </div>
+                        </tr>
+                    </table>
+                </td>
+                <td class="last"><button [routerLink]="['/term/english/add-definition',id]">Add Definition</button></td>
+            </tr>
+            <tr>
+                <td class="category">Field of Study: </td>
+                <td class="middle">{{termEnglish.fieldOfStudy}}</td>
+            </tr>
+            <tr>
+                <td class="category">Author's Name: </td>
+                <td class="middle">{{termEnglish.authorName}}</td>
+            </tr>
+            <tr>
+                <td class="category">Date Created: </td>
+                <td class="middle">{{termEnglish.dateCreated}}</td>
+            </tr>
+            <tr>
+                <td class="category">Date Revised: </td>
+                <td class="middle">{{termEnglish.dateRevised}}</td>
+            </tr>
+            <tr>
+                <td class="category">Translation: </td>
+                <td class="middle">
+                    <button class="addTranslation" [routerLink]="['/term/nonEnglish/add-translation/', id]">Add Translation</button>
+                    <div class="diffLang" *ngFor='let n of termNonEnglish' >
+                        <div class="diffLang" *ngFor='let l of languages'>
+                    <button class="translation" *ngIf='id === n.termEnglishId && n.languageCode == l.code' [routerLink]="['/term/nonEnglish/detail',n._id]">{{l.name}}</button>
+                </div>
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="category">Links: </td>
+                <td class="middle">
+                    <button class="links" *ngIf="termEnglish.linkAuthoritative"><a
+                            href="{{termEnglish.linkAuthoritative}}" target="_blank">Authoritative</a></button>
+                    <button class="links" *ngIf="termEnglish.linkWikipedia"><a href="{{termEnglish.linkWikipedia}}"
+                            target="_blank">Wikipedia</a></button>
+                    <button class="links" *ngIf="termEnglish.linkYouTube"><a href="{{termEnglish.linkYouTube}}"
+                            target="_blank">YouTube</a></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="category">Helpful: </td>
+                <td class="middle">
+                    <button class="helpful" (click)='incrementYes()'>Yes ({{termEnglish.helpYes}})</button>
+                    <button class="helpful" (click)='incrementNo()'>No ({{termEnglish.helpNo}})</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="del" (click)='deleteTerm()'>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </div>
+
+    <footer>
+        <button [routerLink]="['/term/english']">Back to English List</button>
+    </footer>
+</body>
+
+</html>

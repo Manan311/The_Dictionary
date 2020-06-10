@@ -1,0 +1,115 @@
+.form-group {
+  display: grid;
+}
+
+.form-group label {
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.form-group select,
+option {
+  margin-top: 10px;
+  width: 50%;
+  font-size: 14px;
+  padding: 3px 2px;
+}
+
+.form-group textarea {
+  margin-top: 10px;
+  width: 50%;
+  font-size: 14px;
+  padding: 3px 2px;
+  border-radius: 5px;
+  border-left: 5px solid darkred;
+}
+
+.form-group input {
+  margin-top: 10px;
+  width: 50%;
+  font-size: 14px;
+  padding: 3px 2px;
+  border-radius: 5px;
+}
+
+.s {
+  border-left: 5px solid darkred;
+}
+
+.sg {
+  border-left: 5px solid green;
+}
+
+.btnS {
+  margin-top: 30px;
+  margin-right: 15px;
+  padding: 8px;
+  background-color: darkred;
+  width: 80px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-color: darkred;
+  border-width: 2px;
+}
+
+.btnS:hover {
+  box-shadow: 0 0 10px darkred;
+}
+
+.btnS:disabled {
+    background-color: rgb(243, 198, 198);
+    color: whitesmoke;
+    border: 1px solid rgb(243, 198, 198);
+  }
+  
+  .btnS:disabled:hover {
+    background-color: rgb(243, 198, 198);
+    color: whitesmoke;
+    border: 1px solid rgb(243, 198, 198);
+    box-shadow: 0 0 0 white;
+  }
+  
+.btnB {
+  margin-top: 30px;
+  margin-right: 10px;
+  padding: 8px;
+  background-color: white;
+  width: 150px;
+  font-weight: bold;
+  font-size: 14px;
+  color: darkred;
+  border-radius: 5px;
+  border-color: darkred;
+  border-width: 2px;
+}
+
+.btnB:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.date {
+  padding-top: 20px;
+}
+
+.date .field {
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid green;
+}
+
+.a-d {
+  background-color: #f8d7da;
+  color: darkred;
+  padding: 10px;
+  padding-right: 0px;
+  width: 50%;
+  border-radius: 3px;
+}

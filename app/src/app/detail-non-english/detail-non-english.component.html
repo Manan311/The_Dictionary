@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+</head>
+
+<body>
+    <header>
+        <h2>Non-English term detail for {{termNonEnglish.wordNonEnglish}}</h2>
+        <div>
+            <h3>({{lang}}({{termNonEnglish.languageCode}}) for {{termNonEnglish.wordEnglish}})</h3>
+        </div>
+    </header>
+
+    <div class="body">
+        <tbody>
+            <tr>
+                <td class="category">Definition: </td>
+                <td class="definitionCell">
+                    <table *ngFor="let def of termNonEnglish.definitions">
+                        <tr>
+                            <div class="def">
+                                <div class="hd">
+                                    <!-- (click)="incrementLikes(def._id)" -->
+                                    <button (click)='incrementLikes(def._id)'>Likes({{def.likes}})</button>
+                                    <p class="hdp">Author: {{def.authorName}} on {{def.dateCreated}}</p>
+                                </div>
+                                <p class="defdef">{{def.definition}}</p>
+                            </div>
+                        </tr>
+                    </table>
+                </td>
+                <td class="last"><button [routerLink]="['/term/nonEnglish/add-definition/',id]">Add Definition</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="category">Field of Study: </td>
+                <td class="middle">{{termNonEnglish.fieldOfStudy}}</td>
+            </tr>
+            <tr>
+                <td class="category">Author's Name: </td>
+                <td class="middle">{{termNonEnglish.authorName}}</td>
+            </tr>
+            <tr>
+                <td class="category">Date Created: </td>
+                <td class="middle">{{termNonEnglish.dateCreated}}</td>
+            </tr>
+            <tr>
+                <td class="category">Date Revised: </td>
+                <td class="middle">{{termNonEnglish.dateRevised}}</td>
+            </tr>
+            <tr>
+                <td class="category">Links: </td>
+                <td class="middle">
+                    <button class="links" *ngIf="termNonEnglish.linkAuthoritative"><a
+                            href="{{termNonEnglish.linkAuthoritative}}" target="_blank">Authoritative</a></button>
+                    <button class="links" *ngIf="termNonEnglish.linkWikipedia"><a
+                            href="{{termNonEnglish.linkWikipedia}}" target="_blank">Wikipedia</a></button>
+                    <button class="links" *ngIf="termNonEnglish.linkYouTube"><a href="{{termNonEnglish.linkYouTube}}"
+                            target="_blank">YouTube</a></button>
+                </td>
+            </tr>
+            <tr>
+                <td class="category">Helpful: </td>
+                <td class="middle">
+                    <button class="helpful" (click)='incrementYes()'>Yes ({{termNonEnglish.helpYes}})</button>
+                    <button class="helpful" (click)='incrementNo()'>No ({{termNonEnglish.helpNo}})</button>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="del" (click)='deleteTerm()'>Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </div>
+
+    <footer>
+        <button [routerLink]="['/term/nonEnglish']">Back to Non-English List</button>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+.header td {
+  width: 100%;
+  /* border: solid;
+    border-width: 2px;
+    border-color: orange; */
+  padding: 20px;
+}
+
+.header input[type="search"] {
+  font-size: 15px;
+  padding-left: 5px;
+  /* border-radius: 5px; */
+  width: 200px;
+  border-color: darkred;
+  box-shadow: 0 0 5px darkred;
+  outline: none;
+}
+
+.header h2 {
+  display: inline;
+}
+
+.header button.k {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 16px;
+  background-color: #40e8f9;
+  color: gray;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header label {
+  position: relative;
+}
+
+.header .addnew {
+  padding: 8px;
+  background-color: darkred;
+  width: 100px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-color: darkred;
+  box-shadow: 0 0 10px darkred;
+  border-width: 2px;
+}
+
+.termstablerow{
+  max-width: auto;
+}
+
+.termtable th {
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 3px solid darkred;
+  padding-left: 20px;
+}
+
+.termstablerow td {
+  border-bottom: 1px solid darkred;
+  /* background-color: yellow; */
+  padding: 20px;
+  overflow: auto;
+  /* word-wrap: break-word; */
+}
+
+.word{
+  max-width: 150px;
+  overflow: auto;
+}
+
+.author{
+  max-width: 150px;
+  overflow: auto;
+}
+
+.def{
+  /* word-wrap: break-word; */
+  max-width: 500px;
+overflow: auto;}
+
+.field {
+  max-width: 150px;
+  text-align: left;
+  overflow: auto;}
+
+.detail {
+  overflow: auto;
+}
+
+.detail button{
+background-color: white;
+box-shadow: 0 0 5px black;
+width: 65px;
+padding: 10px;
+text-align: center;
+font-size: 14px;
+color: darkred;
+}
+
+.detail button:hover{
+  box-shadow: 0 0 10px darkred;
+}
+
+.termstablerow:hover {
+  background-color: lightgrey;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

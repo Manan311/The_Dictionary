@@ -1,0 +1,138 @@
+header h2 {
+  margin: 0;
+  display: inline;
+}
+
+footer {
+  margin-top: 30px;
+  border-top: 1px solid darkred;
+}
+
+footer button {
+  background-color: white;
+  box-shadow: 0 0 5px black;
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: darkred;
+}
+
+footer button:hover {
+  box-shadow: 0 0 10px darkred;
+}
+
+.def .hd .hdp,
+button {
+  display: inline;
+  font-size: 14px;
+  margin-right: 10px;
+  word-wrap: break-word;
+}
+
+.category {
+  text-align: right;
+  vertical-align: center;
+  margin-left: 10px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.def {
+  border: 1px solid darkred;
+  border-radius: 5px;
+  margin: 20px;
+  width: 90%;
+  word-wrap: break-word;
+}
+
+.def .defdef {
+  max-width: 500px;
+  padding: 0px 10px;
+  word-wrap: break-word;
+}
+
+.def .hd {
+  padding: 10px;
+  border-bottom: 1px solid darkred;
+  background-color: darkred;
+  color: white;
+}
+
+.last {
+  text-align: center;
+}
+
+.last button {
+  padding: 8px;
+  background-color: darkred;
+  width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  border-radius: 5px;
+  border-color: darkred;
+  box-shadow: 0 0 10px darkred;
+  border-width: 2px;
+}
+
+td {
+  width: 10%;
+}
+
+.definitionCell {
+  width: 50%;
+}
+
+.middle {
+  padding-left: 20px;
+}
+
+.addTranslation {
+  padding: 6px;
+  background-color: darkred;
+  width: 120px;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+.addTranslation:hover {
+  border-color: darkred;
+  box-shadow: 0 0 10px darkred;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+}
+
+.links a:visited {
+  color: black;
+}
+
+.diffLang {
+  display: inline;
+}
+
+.del {
+  padding: 6px;
+  background-color: black;
+  width: 120px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  border-radius: 5px;
+  border-width: 2px;
+  display: center;
+  float: right;
+}
+
+.del:hover {
+  border-color: white;
+  box-shadow: 0 0 10px black;
+}

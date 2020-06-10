@@ -1,0 +1,19 @@
+h1{
+    margin-bottom: 0px;
+}
+
+p{
+    margin-top: 5px;
+}
+
+.center{
+    padding: 10px 20px;
+}
+
+.topic{
+    font-weight: bold;
+}
+
+form{
+    margin-left: 80px;
+}

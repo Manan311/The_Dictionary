@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <form (ngSubmit)='register()' #f='ngForm'>
+        <H1>Register</H1>
+        <div class="form-group">
+            <label class="control-label" for="name">Email Address:</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="newUser.email"
+                #email="ngModel" required autofocus>
+            <div *ngIf='email.invalid && (email.dirty || email.touched)' class='a-d'>
+                <div *ngIf='email.errors?.required'>Email is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="name">Username:</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="newUser.username"
+                #username="ngModel" minlength="5" maxlength="20" required autofocus>
+            <div *ngIf='username.invalid && (username.dirty || username.touched)' class='a-d'>
+                <div *ngIf='username.errors?.required'>Username is required, 5 to 20 characters</div>
+                <div *ngIf='username.errors?.minlength'>Username must be at least 5 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="name">Password:</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="newUser.password"
+                #password="ngModel" minlength="8" maxlength="20" required autofocus>
+            <div *ngIf='password.invalid && (password.dirty || password.touched)' class='a-d'>
+                <div *ngIf='password.errors?.required'>Password is required, minimum 8 characters</div>
+                <div *ngIf='password.errors?.minlength'>Password must be at least 8 to 20characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="name">Confirmation Password:</label>
+            <input type="password" class="form-control" name="conformationPassword" [(ngModel)]="newUser.conformationPassword"
+                #conformationPassword="ngModel" minlength="8" maxlength="20" required autofocus>
+            <div *ngIf='conformationPassword.invalid && (conformationPassword.dirty || conformationPassword.touched)' class='a-d'>
+                <div *ngIf='conformationPassword.errors?.required'>Confirmation Password is required, minimum 8 characters</div>
+                <div *ngIf='conformationPassword.errors?.minlength'>Confirmation Password must be at least 8 to 20 characters</div>
+            </div>
+        </div>
+        <button class="btnS" type="submit" [disabled]="!f.form.valid">Register</button>
+        <button class="btnB" [routerLink]="['/home']">Cancel</button>
+    </form>
+</body>
+</html>

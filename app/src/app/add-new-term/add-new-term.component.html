@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Term</title>
+</head>
+
+<body>
+    <header>
+        <h2>Create A New English Term</h2>
+        <p>Enter data, and click/tap the Save button</p>
+    </header>
+
+    <div class="body">
+        <form (ngSubmit)='createTerm()' #f='ngForm'>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Author's Name:</label>
+                <input type="text" class="form-control s" name="authorName" [(ngModel)]="termEnglish.authorName"
+                    #authorName="ngModel" minlength="3" maxlength="100" required autofocus>
+                <div *ngIf='authorName.invalid && (authorName.dirty || authorName.touched)' class='a-d'>
+                    <div *ngIf='authorName.errors?.required'>Name is required, 3 to 100 characters</div>
+                    <div *ngIf='authorName.errors?.minlength'>Name must be at least 3 characters</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Term in English:</label>
+                <input type="text" class="form-control s" name="wordEnglish" [(ngModel)]="termEnglish.wordEnglish"
+                #wordEnglish="ngModel" minlength="3" maxlength="100" required autofocus>
+                    <div *ngIf='wordEnglish.invalid && (wordEnglish.dirty || wordEnglish.touched)' class='a-d'>
+                        <div *ngIf='wordEnglish.errors?.required'>Term is required, 3 to 100 characters</div>
+                        <div *ngIf='wordEnglish.errors?.minlength'>Term must be at least 3 characters</div>
+                    </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label" for="name">Expansion, if Term is an Acronym or Initialism:</label>
+                <input type="text" class="form-control" name="wordExpanded" [(ngModel)]="termEnglish.wordExpanded"
+                    autofocus>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Field of Study:</label>
+                <input type="text" class="form-control s" name="fieldOfStudy" [(ngModel)]="termEnglish.fieldOfStudy"
+                #fieldOfStudy="ngModel" minlength="3" maxlength="100" placeholder="e.g. Computer Programming" required autofocus>
+                    <div *ngIf='fieldOfStudy.invalid && (fieldOfStudy.dirty || fieldOfStudy.touched)' class='a-d'>
+                        <div *ngIf='fieldOfStudy.errors?.required'>Field of Study is required, 3 to 100 characters</div>
+                        <div *ngIf='fieldOfStudy.errors?.minlength'>Field of Study must be at least 3 characters</div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Definition:</label>
+                <textarea rows="10" class="form-control" name="definition"
+                    [(ngModel)]="d.definition" #definition="ngModel" minlength="50" maxlength="5000" required autofocus></textarea>
+                    <div *ngIf='definition.invalid && (definition.dirty || definition.touched)' class='a-d'>
+                        <div *ngIf='definition.errors?.required'>Definition is required, 50 to 5000 characters</div>
+                        <div *ngIf='definition.errors?.minlength'>Definition must be at least 50 characters</div>
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Link (URL), Authoritative:</label>
+                <input type="text" class="form-control" cols="100%" rows="10" name="linkAuthoritative"
+                    [(ngModel)]="termEnglish.linkAuthoritative" autofocus>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Link (URL) on Wikipedia:</label>
+                <input type="text" class="form-control" name="linkWikipedia" [(ngModel)]="termEnglish.linkWikipedia"
+                    autofocus>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="name">Link (URL) on YouTube:</label>
+                <input type="text" class="form-control" name="linkYouTube" [(ngModel)]="termEnglish.linkYouTube"
+                    autofocus>
+            </div>
+            <div class="date">
+                <label class="field" for="dateCreated">Date Created: </label>
+                <label>{{date}}</label>
+            </div>
+            <div class="date">
+                <label class="field" for="dateRevised">Date Revised: </label>
+                <label>{{date}}</label>
+            </div>
+            <button class="btnS" type="submit" [disabled]="!f.form.valid">Save</button>
+            <button class="btnB" [routerLink]="['/term/english']">Back to List</button>
+        </form>
+    </div>
+</body>
+
+</html>

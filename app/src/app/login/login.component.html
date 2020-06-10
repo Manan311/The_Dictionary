@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form (ngSubmit)='login()' #f='ngForm'>
+        <H1>Login</H1>
+        <div class="form-group">
+            <label class="control-label" for="name">Username:</label>
+            <input type="text" class="form-control" name="username" minlength="5" [(ngModel)]="newLogin.username"
+                #username="ngModel" required autofocus>
+            <div *ngIf='username.invalid && (username.dirty || username.touched)' class='a-d'>
+                <div *ngIf='username.errors?.required'>Username is required</div>
+                <div *ngIf='username.errors?.minlength'>Username must be at least 5 characters</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="name">Password:</label>
+            <input type="password" class="form-control" minlength="8" name="password" [(ngModel)]="newLogin.password"
+                #password="ngModel" required autofocus>
+            <div *ngIf='password.invalid && (password.dirty || password.touched)' class='a-d'>
+                <div *ngIf='password.errors?.required'>Password is required</div>
+                <div *ngIf='username.errors?.minlength'>Password must be at least 8 characters</div>
+            </div>
+        </div>
+        <button class="btnS" type="submit" [disabled]="!f.form.valid">Login</button>
+        <button class="btnB" [routerLink]="['/home']">Cancel</button>
+    </form>
+</body>
+</html>
